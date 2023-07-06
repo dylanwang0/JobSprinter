@@ -23,8 +23,6 @@ function PostingList() {
   // const { loading, error, data } = useQuery(GET_JOB, {
   //   variables: { id:"64950e7ef4d181efcdbf08e8" }
   // });
-  
-  console.log(loading, error, data)
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;

@@ -6,17 +6,19 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
-import CreateJob from "./components/createJob";
 import Home from "./components/Home";
+import Postings from "./components/Postings";
+import Create from "./components/Create";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreateJob />} />
+        <Route path="/postings" element={<Postings />} />
+        <Route path="/create" element={<Create />} />
+
       </Routes>
     </Router>
   );

@@ -1,16 +1,19 @@
-//import { Link } from "react-router-dom";
-import logo from '../images/newlogo.png'
+import { Link, NavLink } from "react-router-dom";
+import logo from "../images/newlogo.png";
+import { useState } from "react";
 
 function Navbar() {
+  const [selectedOption, setSelectedOption] = useState("home");
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
+
   return (
-    <nav class="bg-white border-gray-200 dark:bg-gray-800 p-5">
+    <nav class="bg-white border-gray-200 dark:bg-gray-800 p-5 z-50">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div class="flex items-center">
-          <img
-            src={logo}
-            class="h-8 mr-3"
-            alt="Logo"
-          />
+          <img src={logo} class="h-8 mr-3" alt="Logo" />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             JobSprinter
           </span>
@@ -39,46 +42,67 @@ function Navbar() {
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+            <li class="text-black">
+              <NavLink
+                exact
+                to="/"
+                className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white`}
+                style={({ isActive }) => ({
+                  color: isActive ? "rgb(59 130 246 / var(--tw-text-opacity))": '',
+                })}
                 aria-current="page"
+                onClick={() => handleOptionSelect("home")}
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              <NavLink
+                to="/postings"
+                className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white`}
+                style={({ isActive }) => ({
+                  color: isActive ? "rgb(59 130 246 / var(--tw-text-opacity))": '',
+                })}
+                onClick={() => handleOptionSelect("postings")}
               >
-                About
-              </a>
+                Postings
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              <NavLink
+                to="/create"
+                className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white`}
+                style={({ isActive }) => ({
+                  color: isActive ? "rgb(59 130 246 / var(--tw-text-opacity))": '',
+                })}
+                onClick={() => handleOptionSelect("new")}
               >
-                Services
-              </a>
+                New
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              <NavLink
+                to="/delete"
+                className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white`}
+                style={({ isActive }) => ({
+                  color: isActive ? "rgb(59 130 246 / var(--tw-text-opacity))": '',
+                })}
+                onClick={() => handleOptionSelect("delete")}
               >
-                Pricing
-              </a>
+                Delete
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
-                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              <NavLink
+                to="/edit"
+                className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:text-white`}
+                style={({ isActive }) => ({
+                  color: isActive ? "rgb(59 130 246 / var(--tw-text-opacity))": '',
+                })}
+                onClick={() => handleOptionSelect("edit")}
               >
-                Contact
-              </a>
+                Edit
+              </NavLink>
             </li>
           </ul>
         </div>

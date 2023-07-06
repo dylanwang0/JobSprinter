@@ -123,13 +123,12 @@ function CreateJob() {
       refetchQueries: [{ query: GET_POSTINGS }],
     });
     // await refetch();
-    console.log("hello");
     navigate("/");
   };
 
   //   form.addEventListener("submit", handleSubmit);
   return (
-    <div className="w-screen h-screen bg-gray-800 p-10 flex justify-center items-center">
+    <div className="w-full bg-gray-800 p-10 flex justify-center items-center pointer-events-auto">
       <form className="w-1/2" id="form" onSubmit={handleSubmit}>
         <p className="text-3xl font-bold mb-4 text-white">Create A Job Posting</p>
         <div className="relative mt-6 mb-5" data-te-input-wrapper-init>
