@@ -24,5 +24,6 @@ type JobListing struct {
 type UpdateJobListingInput struct {
 	Title       *string `json:"title,omitempty" bson:"title"`
 	Description *string `json:"description,omitempty" bson:"description"`
+	Company     *string `json:"company,omitempty" bson:"company"`
 	URL         *string `json:"url,omitempty" bson:"url"`
 }

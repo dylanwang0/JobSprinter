@@ -31,6 +31,7 @@ input CreateJobListingInput {
 input UpdateJobListingInput {
   title: String
   description: String
+  company: String
   url: String
 }
 

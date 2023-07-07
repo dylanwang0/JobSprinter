@@ -94,6 +94,7 @@ function PostingCard({ job }) {
         input: {
           title: title,
           description: desc,
+          company: company,
           url: url,
         },
       },

@@ -116,6 +116,9 @@ func (db *DB) UpdateJobListing(jobId string, jobInfo model.UpdateJobListingInput
 	if jobInfo.Description != nil {
 		updateJobInfo["description"] = jobInfo.Description
 	}
+	if jobInfo.Company != nil {
+		updateJobInfo["company"] = jobInfo.Company
+	}
 	if jobInfo.URL != nil {
 		updateJobInfo["url"] = jobInfo.URL
 	}
