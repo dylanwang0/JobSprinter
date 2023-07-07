@@ -30,7 +30,7 @@ function PostingList() {
   return (
     <div className="flex flex-wrap justify-center align-middle">
       {data.jobs.map((job) => (
-        <PostingCard job={job} />
+        <PostingCard key={job._id} job={job} />
       ))}
     </div>
   );

@@ -3,26 +3,26 @@
 package model
 
 type CreateJobListingInput struct {
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Company     string `json:"company"`
-	URL         string `json:"url"`
+	Title       string `json:"title" bson:"title"`
+	Description string `json:"description" bson:"description"`
+	Company     string `json:"company" bson:"company"`
+	URL         string `json:"url" bson:"url"`
 }
 
 type DeleteJobResponse struct {
-	DeletedJobID string `json:"deletedJobId"`
+	DeletedJobID string `json:"deletedJobId" bson:"deletedJobId"`
 }
 
 type JobListing struct {
-	ID          string `json:"_id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Company     string `json:"company"`
-	URL         string `json:"url"`
+	ID          string `json:"_id" bson:"_id"`
+	Title       string `json:"title" bson:"title"`
+	Description string `json:"description" bson:"description"`
+	Company     string `json:"company" bson:"company"`
+	URL         string `json:"url" bson:"url"`
 }
 
 type UpdateJobListingInput struct {
-	Title       *string `json:"title,omitempty"`
-	Description *string `json:"description,omitempty"`
-	URL         *string `json:"url,omitempty"`
+	Title       *string `json:"title,omitempty" bson:"title"`
+	Description *string `json:"description,omitempty" bson:"description"`
+	URL         *string `json:"url,omitempty" bson:"url"`
 }

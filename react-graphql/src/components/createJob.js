@@ -123,7 +123,7 @@ function CreateJob() {
       refetchQueries: [{ query: GET_POSTINGS }],
     });
     // await refetch();
-    navigate("/");
+    navigate("/postings");
   };
 
   //   form.addEventListener("submit", handleSubmit);
