@@ -8,8 +8,9 @@ function Header() {
       </h1>
       <p className="mt-6 text-xl leading-8 text-gray-400 w-4/5">
         JobSprinter is job search website to help hard working people find their
-        dream jobs. Users can search through various job postings that others
-        have posted or create their own to promote the opportunity.
+        dream jobs. JobSprinter helps both job seekers to find jobs fit for them,
+        and companies to promote their job opportunities on this site. Job postings
+        can be created, edited and deleted at any time.
       </p>
       <div className="mt-10 flex items-center gap-x-6 pointer-events-auto">
         <Link
